@@ -4,7 +4,7 @@
 - The database used is mongodb. 
 - For the background, we use bideo.js to have a full screen video playing. 
 
-## There are some screenshoot of the final result:
+## Here are some screenshoot of the final results:
 ![app1](images/app1.png)
 ![app2](images/app2.png)
 ![app3](images/app3.png)
