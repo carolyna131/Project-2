@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Airline Dashboard</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+</head>
+
+<body>
+
+  <div id="container">
+    
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+    
+  </div>
+
+
+
+  <div class="container" id="header">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Airline Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="well">
+          <h5>SELECT AIRLINE:</h5>
+          <!-- <select id="selAirline" onchange="optionChanged(this.value)"></select> -->
+        <form id="airline-form" action="/profile/<airline_name>"  enctype="multipart/form-data">
+          <select id="selAirline" onchange="optionChanged(this.value)">
+          </select>
+        </form>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sample Flight Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container">
+      <div class="row">
+      <div class="col-md-6">
+        <div id="dotplot"></div>
+      </div>
+
+      <div class="col-md-6">
+        <div id="barchart"></div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</div>
+
+<br>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div id="gauge"></div>
+    </div>
+
+
+    <div class="col-md-6">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+
+
+ 
+ 
+  <div class="container">
+    <div class="row margin-top-50">
+      <div class="col-md-2">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h3 class="card-title">Tweets</h3>
+            <h6 class="card-subtitle mb-2 text-muted">Know what others think about this airline after the flight!</h6>
+            <p class="card-text">We know travel plans are impacted right now. But to fulfill your wanderlust, we'll continue to share stories that can inspire your next adventure.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div id="table-area" class="">
+          <table id="ufo-table" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table-head">Airline</th>
+                <th class="table-head">Sentiment</th>
+                <th class="table-head">Date</th>
+                <th class="table-head">Tweet</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <span class="bottom"> Airline Dashboard</span>
+  </footer>
+
+
+
+
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://unpkg.com/d3@6.3.1/dist/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bideo.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+  <script>
+    if (window.location.host.indexOf('github.io') !== -1 && window.location.protocol !== "https:") {
+      window.location.protocol = "https";
+    }
+  </script>
+
+</body>
+
+</html>
