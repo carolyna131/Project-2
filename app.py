@@ -17,8 +17,8 @@ app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/flights2_db"
 mongo = PyMongo(app)
 
-holiday = mongo.db.flightHoliday
-flightsByAirline = mongo.db.flightsByAirline
+holiday = mongo.db.flightDec
+flightsByAirline = mongo.db.flights_ByAirline
 flightsByDay = mongo.db.flights_byDay
 flightsByState = mongo.db.flights_byState
 flightsByDate = mongo.db.flights_byDate
@@ -27,9 +27,7 @@ tweets = mongo.db.tweets_df
 
 @app.route("/")
 def index():
-    airline_options = ["American Airlines Inc.","Delta Air Lines Inc.","Southwest Airlines Co.","US Airways Inc.","United Air Lines Inc.","Virgin America"]
-    print(airline_options)
-    return render_template("index.html", airline_options = airline_options)
+    return render_template("index.html")
 
 
 
@@ -61,36 +59,6 @@ def get_one_flight(airline):
     else: 
         output = "No matching flight"
     return jsonify(output)
-
-
-# @app.route("/profile/<airline>")
-# def get_all_flights(airline):
-#     """Return the list of flights."""
-#     output = []
-#     filt = {'AIRLINE': airline}
-#     flights = holiday.find(filt)
-
-#     for flight in flights:
-#         output.append({
-#         'AIRLINE_ID' : flight['AIRLINE_ID'], 
-#         'AIRLINE' : flight['AIRLINE'],
-#         'DATE' : flight['DATE'],
-#         'DAY_OF_WEEK' : flight['DAY_OF_WEEK'],
-#         'DEPARTURE_DELAY' : flight['DEPARTURE_DELAY'],
-#         'ARRIVAL_DELAY' : flight['ARRIVAL_DELAY'],
-#         'ORIG_AIRPORT' : flight['ORIG_AIRPORT'],
-#         'ORIG_CITY' : flight['ORIG_CITY'],
-#         'DEST_CITY' : flight['DEST_CITY'],
-#         'ORIG_STATE' : flight['ORIG_STATE'],
-#         'ORIG_LATITUDE' : flight['ORIG_LATITUDE'],
-#         'ORIG_LONGITUDE' : flight['ORIG_LONGITUDE'],
-#         'DEST_AIRPORT' : flight['DEST_AIRPORT'],
-#         'DEST_STATE' : flight['DEST_STATE'],
-#         'DEST_LATITUDE' : flight['DEST_LATITUDE'],
-#         'DEST_LONGITUDE': flight['DEST_LONGITUDE']
-#         })
-#     return jsonify(output)
-
 
 
 
