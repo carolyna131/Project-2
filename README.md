@@ -12,7 +12,7 @@
 - Now that the environments for the webpage is created and data are retrieved, open browser at "localhost:5000" and see your result.
 - By changing the dropdown menu, you should be able to see changes in the tweets table down below. Enjoy!
 
-##Here are some screenshots of the final result:
+## Here are some screenshots of the final result:
 ![app1](images/app1.png)
 ![app2](images/app2.png)
 ![app3](images/app3.png)
