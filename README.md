@@ -12,10 +12,7 @@
 - Now that the environments for the webpage is created and data are retrieved, open browser at "localhost:5000" and see your result.
 - By changing the dropdown menu, you should be able to see changes in the tweets table down below. Enjoy!
 
-## Note (do this before start): 
-flights.csv is here (https://drive.google.com/file/d/19lQLBvPIyF1OpAwCOcS-gMNcHlbZctd4/view?usp=sharing). Please download it and put it under "Resources" folder. 
-
-## There are some screenshoot of the final result:
+##Here are some screenshots of the final result:
 ![app1](images/app1.png)
 ![app2](images/app2.png)
 ![app3](images/app3.png)
